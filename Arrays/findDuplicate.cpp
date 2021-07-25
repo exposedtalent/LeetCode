@@ -38,6 +38,23 @@ public:
 };
 
 // Optimal TC : O(n), SC: O(1) without changing the array
+/*
+    One pointer will be moving fast jumping two indexs and then the slower pointer will be moving slower moving 1 index at a time
+    once they both reach at a point wherer they both are equal we are going to chnag the fast pointer to go back the nums[0] and then run bothg
+    of them again but this time they both only increment by one everytime.
+    THIS IS DONE WITH THE FLOYD'S ALGORITHM
+    HOW THE FLOYD'S AGORIRTHM WORKS IN SIMPLE MATH
+    Algorithm: Assume non-cyclic length N and cyclic length M with index [0,M-1]
+
+    <-  N  ->          1. When slow enters the cycle at 0 (◎), fast is at N (■)
+            s
+    □-□-□-□-◎-□-□-□    2. Fast is M-N behind, so they will meet at M-N (※)
+            |     |
+            □  M  ■ f  3. Cycle entrance is now M-(M-N) = N away, so if we
+            |     |       make one pointer start over and both at slow speed,
+            □-□-※-□       they will guarantee to meet again at 0 (◎)meet
+
+*/
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
