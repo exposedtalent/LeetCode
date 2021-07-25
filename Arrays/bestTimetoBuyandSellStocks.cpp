@@ -10,6 +10,8 @@ public:
     int maxProfit(vector<int>& prices) {
         int minPrice = 99999;
         int maxProfit =0;
+        int arr[minPrice];
+       
         for(int i = 0; i < prices.size();i++){
             if(prices[i] < minPrice){
                 minPrice = prices[i];
