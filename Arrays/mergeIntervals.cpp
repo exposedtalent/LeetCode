@@ -41,3 +41,38 @@ public:
         
     }
 };
+
+
+// Optimal
+class Solution {
+    
+public:
+   
+    vector<vector<int>> merge(vector<vector<int>>& intervals) {
+        vector<vector<int>> res;
+        
+        if(intervals.empty()){
+            return res;
+        }
+        if(intervals.size() == 1){
+            res.push_back(intervals[0]);
+            return res;
+        }
+        sort( intervals.begin(), intervals.end());
+        
+        vector<int> in = intervals[0];
+        
+        for(auto it: intervals){
+            if(it[0] <= in[1]){
+                in[1]= max(it[1], in[1]);
+            }
+            else{
+                res.push_back(in);
+                in = it;
+            }
+        }
+        res.push_back(in);
+        return res;
+        
+    }
+};

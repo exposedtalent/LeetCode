@@ -7,5 +7,4 @@
             |     |
             □  M  ■ f  3. Cycle entrance is now M-(M-N) = N away, so if we
             |     |       make one pointer start over and both at slow speed,
-            □-□-※-□       they will guarantee to meet again at 0 (◎)
-            meet
+            □-□-※-□       they will guarantee to meet again at 0 (◎)meet
