@@ -8,7 +8,8 @@ using namespace std;
 // Optimal TC : O(n), SC: O(1) can be achieved using the Moore's voting algorithm
 /*
     Moore's voting algorithm : 
-
+        The intuition behind is that as we know that theere will be more than n/2 elements in the array of same element we can
+        traveser throught and end up have a positive number of count as more than half of the array is one element 
 
 */
 // Using hashMaps TC: O(n) , SC: O(n)
