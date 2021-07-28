@@ -3,6 +3,8 @@
 #include<iostream>
 #include<vector>
 #include<algorithm>
+#include<climits>
+
 using namespace std;
 
 // Brute force would be 2 loops where one is i and another check all the  other possibilities that can happen if you buy that and comapare the max TC : (n^2) SC: (1)
