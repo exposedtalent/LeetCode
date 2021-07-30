@@ -24,7 +24,7 @@ public:
                 int front = j+1;   // left pointer  just after j
                 int back = n-1;    // right pointer at last index
                 
-                while(front < back) { // loop till front and back pointer donot cross over
+                while(front < back) { // loop till front and back pointer dont cross over
                     int two_sum = nums[front] + nums[back]; // now come to two sum problem where we need to check for rem
                     if(two_sum < rem) front++;  // if(rem > two_sum) then logically we have to move front pointer ahead to increase value close to rem
                                
