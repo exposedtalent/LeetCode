@@ -51,7 +51,7 @@ public:
 };
 
 // Optimal TC : O(N + M) , SC: O(1)
-class Solution {
+class Solution {s
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
         ListNode* d1 = headA;
