@@ -1,9 +1,5 @@
-// https://leetcode.com/problems/linked-list-cycle-ii/
+// https://leetcode.com/problems/linked-list-cycle/
 
-#include<iostream>
-#include<vector>
-#include<algorithm>
-using namespace std;
 
 /**
  * Definition for singly-linked list.
@@ -14,38 +10,35 @@ using namespace std;
  * };
  */
 
-
-//     THIS IS DONE WITH THE FLOYD'S ALGORITHM
+// Solution using Hashing TC : O(n) , SC: O(n)
 class Solution {
 public:
-    ListNode* getIntersection(ListNode* head){
+    bool hasCycle(ListNode *head) {
+        set<ListNode*> map;
+        while(head != NULL){
+            if(map.find(head) != map.end()){
+                return true;
+            }
+            map.insert(head);
+            head = head->next;
+        }
+        return false;
+    }
+};
+
+// FLOYD ALGORITHM TC: O(n), SC O(1)
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
         ListNode* slow = head, *fast = head;
         
         while(fast && fast->next){
-            fast = fast->next->next;
             slow = slow->next;
-            if(fast == slow){
-                return fast;
+            fast = fast->next->next;
+            if(slow == fast){
+                return true;
             }
         }
-        return NULL;
-    }
-    ListNode *detectCycle(ListNode *head) {
-        if(head == NULL){
-            return NULL;
-        }
-        
-        ListNode* inter = getIntersection (head); 
-        if(inter == NULL){
-            return NULL;
-        }
-        ListNode *fast = head;
-        while(fast != inter){
-            inter = inter->next;
-            fast = fast->next;
-            
-        }
-        return inter;
-        
+        return false;
     }
 };

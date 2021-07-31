@@ -3,16 +3,6 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode() : val(0), next(nullptr) {}
- *     ListNode(int x) : val(x), next(nullptr) {}
- *     ListNode(int x, ListNode *next) : val(x), next(next) {}
- * };
- */
 
 /**
  * Definition for singly-linked list.
@@ -24,7 +14,7 @@ using namespace std;
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-// Brute Force TC : O(n) SC: O(n)
+// Brute Force TC : O(n1 + n2) SC: O(n1 + n2)
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
@@ -51,6 +41,7 @@ public:
         return dummy->next;
     }
 };
+// Optimal
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
