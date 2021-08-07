@@ -2,6 +2,8 @@
 
 #include<iostream>
 #include<vector>
+
+// Optimal TC : O(logn) SC: O(1)
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
