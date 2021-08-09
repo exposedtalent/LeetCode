@@ -4,6 +4,23 @@
 #include<vector>
 using namespace std;
 
+
+// Brute Force Methods
+class Solution {
+public:
+    vector<int> sortedSquares(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> ans;
+        for(int i =0; i < nums.size(); i++){
+            ans.push_back(nums[i] * nums[i]);
+        }
+        
+        sort(ans.begin(), ans.end());
+        return ans;
+    }
+};
+
+// Optimal TC : O(n) , SC: O(1)
 class Solution {
 public:
     vector<int> sortedSquares(vector<int>& nums) {

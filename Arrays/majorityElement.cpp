@@ -12,6 +12,25 @@ using namespace std;
         traveser throught and end up have a positive number of count as more than half of the array is one element 
 
 */
+// Brute Force 
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        int majority = nums.size()/2;        
+        for(int i =0 ; i < nums.size(); i++){
+            int count = 0;
+            for(int j = 0; j < nums.size();j++){
+                if(nums[i] == nums[j]){
+                    count ++;
+                }
+            }
+            if(count > majority){
+                return nums[i];
+            }
+        }
+        return -1;
+    }
+};
 // Using hashMaps TC: O(n) , SC: O(n)
 class Solution {
 public:
