@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/trapping-rain-water/
+// https://leetcode.com/problems/find-the-duplicate-number/
 
 #include<iostream>
 #include<vector>
@@ -16,6 +16,20 @@ public:
             }
         }
         return NULL;
+    }
+};
+// Using Set TC : O(n) , SC: O(n)
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) {
+        set<int> seen;
+        for(auto num : nums){
+            if(seen.count(num)){
+                return num;
+            }
+            seen.insert(num);
+        }
+        return -1;
     }
 };
 
