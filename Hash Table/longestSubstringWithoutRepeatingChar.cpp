@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-substring-without-repeating-characters/
+// https://leetcode.com/problems/t-substring-without-repeating-characters/
 
 #include<iostream>
 #include<vector>
@@ -9,7 +9,7 @@ using namespace std;
 class Solution {
 public:
     bool checkRep(string &s, int start, int end){
-        
+            
         vector<char> ch(128);
         
         for(int i  = start; i <= end; i++){
@@ -22,7 +22,7 @@ public:
         }
         return true;
     }
-    int lengthOfLongestSubstring(string s) {
+    int lengthOftSubstring(string s) {
         
         int n = s.length();
         int ans = 0;
